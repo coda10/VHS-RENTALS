@@ -2,7 +2,7 @@
 const router = require('express').Router();
 
 //Import Mongoose
-
+const mongoose = require('mongoose');
 
 //Admin Login
 router.post('/login', async (req, res)=>{

@@ -1,7 +1,8 @@
 //Import Router Module
 const router = require('express').Router();
 
-
+//Import Mongoose
+const mongoose = require('mongoose');
 
 //Fetch All Data
 router.get('/dashboard', async (req, res)=>{
