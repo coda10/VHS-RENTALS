@@ -10,6 +10,10 @@ const usersRouter = require('./routes/users');
 
 const app = express();
 
+//Import Routes
+const auth = require('./routes/admin/auth');
+const dashboard = require('./routes/admin/dashboard');
+
 // view engine setup
 //app.set('views', path.join(__dirname, 'views'));
 //app.set('view engine', 'jade');
@@ -21,6 +25,8 @@ app.use(cookieParser());
 //app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/users', usersRouter);
+app.use('/auth/admin', auth);
+app.use('/admin', dashboard);
 
 console.log(process.env.NODE_ENV);
 //console.log(config.get('database.db_host'));
