@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
+import { AdminregistrationComponent } from './adminregistration/adminregistration.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AdminloginComponent
+    AdminloginComponent,
+    AdminregistrationComponent
   ],
   imports: [
     BrowserModule,
