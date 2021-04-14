@@ -1,8 +1,8 @@
 //Import Mongoose
-const mongoose = required('mongoose');
+const mongoose = require('mongoose');
 
 //Define Schema
-const admin_Schema = new Schema.mongoose({
+const admin_Schema = new mongoose.Schema({
     username: {
         type: String,
         required: true
@@ -21,4 +21,4 @@ const admin_Schema = new Schema.mongoose({
 const Admin = mongoose.model('Admins', admin_Schema);
 
 //Export the schema
-modules.exports = Admin;
+module.exports = Admin;
