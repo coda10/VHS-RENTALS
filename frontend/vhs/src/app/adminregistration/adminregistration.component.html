@@ -1,26 +1,28 @@
-<p>adminregistration works!</p>
 
-<div class="register">
-  <h1>VHS Admin Login</h1>
-  <form [formGroup]="registrationForm" (ngSubmit)="register(registrationForm)">
-      <div>
-        <input type="text" placeholder="Username" id="username" formControlName="username">
-      </div>
-      <div>
-        <input type="email" placeholder="Email" id="email" formControlName="email">
-      </div>
-      <div>
-        <input type="password" placeholder="Password" id="password" formControlName="password">
-      </div>
-      <div>
-        <input type="password" placeholder="Comfirm Password" id="password" formControlName="comfirmPassword">
-      </div>
-    <button type="submit" [disabled]="registrationForm.invalid">Register</button>
-  </form>
-</div>
 
-<div class="result">
-  <div *ngIf="serverFeedBack !== ''" class="serverFeedBack-color"><h2>{{serverFeedBack.message}}</h2></div>
-  <div *ngIf="passwordDoesnotMatch"><h2 class="passwordstatus-color">**Password Does not Match**</h2></div>
+<div class="adminregistration-bg-image">
+  <div class="register">
+    <h1>VHS Admin Registration</h1>
+    <form [formGroup]="registrationForm" (ngSubmit)="register(registrationForm)">
+        <div>
+          <input type="text" placeholder="Username" id="username" formControlName="username">
+        </div>
+        <div>
+          <input type="email" placeholder="Email" id="email" formControlName="email">
+        </div>
+        <div>
+          <input type="password" placeholder="Password" id="password" formControlName="password">
+        </div>
+        <div>
+          <input type="password" placeholder="Comfirm Password" id="password" formControlName="comfirmPassword">
+        </div>
+      <button type="submit" [disabled]="registrationForm.invalid">Register</button>
+    </form>
+
+    <div class="result">
+      <div *ngIf="serverFeedBack !== ''" class="serverFeedBack-color"><h2>{{serverFeedBack.message}}</h2></div>
+      <div *ngIf="passwordDoesnotMatch"><h2 class="passwordstatus-color">**Password Does not Match**</h2></div>
+    </div>
+  </div>
 </div>
 
