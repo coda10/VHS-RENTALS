@@ -6,7 +6,11 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { AdminregistrationComponent } from './adminregistration/adminregistration.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'
 
+// Material Module
+import {MatFormFieldModule} from '@angular/material/form-field';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +20,12 @@ import { AdminregistrationComponent } from './adminregistration/adminregistratio
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+
+    //Material Modules
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]
