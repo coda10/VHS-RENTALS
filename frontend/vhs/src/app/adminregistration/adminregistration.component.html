@@ -3,18 +3,18 @@
 <div class="register">
   <h1>VHS Admin Login</h1>
   <form [formGroup]="registrationForm" (ngSubmit)="register(registrationForm)">
-     <label>Username
-       <input type="text" id="username" formControlName="username">
-     </label>
-     <label>Email
-      <input type="email" id="email" formControlName="email">
-    </label>
-    <label>Password
-      <input type="password" id="password" formControlName="password">
-    </label>
-    <label>Confirm-Password
-      <input type="password" id="password" formControlName="comfirmPassword">
-    </label>
+      <div>
+        <input type="text" placeholder="Username" id="username" formControlName="username">
+      </div>
+      <div>
+        <input type="email" placeholder="Email" id="email" formControlName="email">
+      </div>
+      <div>
+        <input type="password" placeholder="Password" id="password" formControlName="password">
+      </div>
+      <div>
+        <input type="password" placeholder="Comfirm Password" id="password" formControlName="comfirmPassword">
+      </div>
     <button type="submit" [disabled]="registrationForm.invalid">Register</button>
   </form>
 </div>
