@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const mongoose = require('mongoose');
 const cors = require('cors');
 
 //const config = require('config');
@@ -29,6 +30,25 @@ app.use(cookieParser());
 app.use('/users', usersRouter);
 app.use('/auth/admin', auth);
 app.use('/admin', dashboard);
+
+
+//Connect to DB 
+try {
+  mongoose.connect('mongodb://localhost:27017/vhs',{
+    //mongoose.connect(`mongodb://${config.get('database.db_host')}:${config.get('database.db_port')}/vhs`,{
+    useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useCreateIndex: true,
+      useFindAndModify: false }, (err)=>{
+        if(err){
+          console.log(err);
+        }else{
+          console.log("Database Connection Successful");
+        }
+      });
+} catch (error) {
+  console.log(error);
+}
 
 //console.log(process.env.NODE_ENV);
 //console.log(config.get('database.db_host'));
