@@ -4,6 +4,7 @@
   <div class="register">
     <h1>VHS Admin Registration</h1>
     <form [formGroup]="registrationForm" (ngSubmit)="register(registrationForm)">
+        <button class="loginlink"><a routerLink="/admin/login">Login</a></button>
         <div>
           <input type="text" placeholder="Username" id="username" formControlName="username">
         </div>
@@ -16,6 +17,9 @@
         <div>
           <input type="password" placeholder="Comfirm Password" id="password" formControlName="comfirmPassword">
         </div>
+        <!-- <div> -->
+          <!-- <a routerLink="/admin/login" class="loginlink">Login</a> -->
+        <!-- </div> -->
       <button type="submit" [disabled]="registrationForm.invalid">Register</button>
     </form>
 

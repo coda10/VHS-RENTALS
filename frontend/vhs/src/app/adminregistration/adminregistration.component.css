@@ -6,7 +6,7 @@ body { background-image: radial-gradient( cover, rgba(92,100,111,1) 0%,rgba(31,3
   background: #eceeee;
   border: 1px solid #42464b;
   border-radius: 8px;
-  height: 450px;
+  height: 500px;
   margin: 110px auto 0;
   width: 298px;
   text-align: center;
@@ -113,4 +113,9 @@ button[type="submit"]:active {
 .serverFeedBack-error-color{
   color: red;
   margin: 10px;
+}
+
+.loginlink{
+  margin-top: 10px;
+  background-color: #3db0a6;
 }

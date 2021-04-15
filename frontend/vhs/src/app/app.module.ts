@@ -11,11 +11,14 @@ import { HttpClientModule } from '@angular/common/http'
 
 // Material Module
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { LandingpageComponent } from './landingpage/landingpage.component';
+import { RouterModule } from '@angular/router';
 @NgModule({
   declarations: [
     AppComponent,
     AdminloginComponent,
-    AdminregistrationComponent
+    AdminregistrationComponent,
+    LandingpageComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +28,14 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     HttpClientModule,
 
     //Material Modules
-    MatFormFieldModule
+    MatFormFieldModule,
+
+    //Routes
+    RouterModule.forRoot([
+      {path: "", component: LandingpageComponent},
+      {path: "admin/login", component: AdminloginComponent},
+      {path: "admin/registration", component: AdminregistrationComponent}
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
