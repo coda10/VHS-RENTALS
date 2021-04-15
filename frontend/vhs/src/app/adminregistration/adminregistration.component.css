@@ -100,7 +100,7 @@ button[type="submit"]:active {
 
 .passwordstatus-color{
   color: red;
-  margin: 10px;
+  margin: 18px;
 }
 
 .adminregistration-bg-image{
@@ -108,4 +108,9 @@ button[type="submit"]:active {
   background-image: url('../../../images/pic4.jpg');
   width: 100%;
   height: 100%;
+}
+
+.serverFeedBack-error-color{
+  color: red;
+  margin: 10px;
 }

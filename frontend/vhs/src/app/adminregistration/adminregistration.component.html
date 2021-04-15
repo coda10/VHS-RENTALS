@@ -20,8 +20,9 @@
     </form>
 
     <div class="result">
-      <div *ngIf="serverFeedBack !== ''" class="serverFeedBack-color"><h2>{{serverFeedBack.message}}</h2></div>
-      <div *ngIf="passwordDoesnotMatch"><h2 class="passwordstatus-color">**Password Does not Match**</h2></div>
+      <div *ngIf="serverFeedBack.message !== ''" class="serverFeedBack-color"><h2>{{serverFeedBack.message}}</h2></div>
+      <div *ngIf="serverFeedBack.error !== ''" class="serverFeedBack-error-color"><h4>{{serverFeedBack.error}}</h4></div>
+      <div *ngIf="passwordDoesnotMatch"><h4 class="passwordstatus-color">**Password Does not Match**</h4></div>
     </div>
   </div>
 </div>

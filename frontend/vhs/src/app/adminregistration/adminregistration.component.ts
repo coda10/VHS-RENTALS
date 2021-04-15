@@ -37,6 +37,7 @@ export class AdminregistrationComponent implements OnInit {
    }else{
      this.passwordDoesnotMatch = true;
    }
+   //If error code is 404
   }
 
   //Validations
