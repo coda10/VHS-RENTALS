@@ -13,12 +13,26 @@ import { HttpClientModule } from '@angular/common/http'
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { LandingpageComponent } from './landingpage/landingpage.component';
 import { RouterModule } from '@angular/router';
+import { TestdashboardComponent } from './testdashboard/testdashboard.component';
+import { AdmindashboardComponent } from './admin/admindashboard/admindashboard.component';
+import { AdmindashboardModule } from './admin/admindashboard/admindashboard.module';
+import { DashboardComponent } from './admincomponents/components/dashboard/dashboard.component';
+import { ViewusersComponent } from './admincomponents/components/viewusers/viewusers.component';
+import { CreateuserComponent } from './admincomponents/components/createuser/createuser.component';
+import { EdituserComponent } from './admincomponents/components/edituser/edituser.component';
+import { DeleteuserComponent } from './admincomponents/components/deleteuser/deleteuser.component';
+import { ViewmoviesComponent } from './admincomponents/components/viewmovies/viewmovies.component';
+import { DeletemovieComponent } from './admincomponents/components/deletemovie/deletemovie.component';
+import { CreatemovieComponent } from './admincomponents/components/createmovie/createmovie.component';
 @NgModule({
   declarations: [
     AppComponent,
     AdminloginComponent,
     AdminregistrationComponent,
-    LandingpageComponent
+    LandingpageComponent,
+    TestdashboardComponent,
+    //DashboardComponent,
+    //AdmindashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -34,8 +48,25 @@ import { RouterModule } from '@angular/router';
     RouterModule.forRoot([
       {path: "", component: LandingpageComponent},
       {path: "admin/login", component: AdminloginComponent},
-      {path: "admin/registration", component: AdminregistrationComponent}
-    ])
+      {path: "admin/registration", component: AdminregistrationComponent},
+      {path: "testdashboard", component: TestdashboardComponent},
+      {path: "admindashboard", 
+      component: AdmindashboardComponent,
+      children: [
+        {path: "", component: DashboardComponent},
+        {path: "dashboard", component: DashboardComponent},
+        {path: "viewusers", component: ViewusersComponent},
+        {path: "createuser", component: CreateuserComponent},
+        {path: "edituser", component: EdituserComponent},
+        {path: "deleteuser", component: DeleteuserComponent},
+        {path: "viewmovies", component: ViewmoviesComponent},
+        {path: "createmovie", component: CreatemovieComponent},
+        {path: "editmovie", component: DashboardComponent},
+        {path: "deletemovie", component: DeletemovieComponent},
+        // {path: "logout", component: AdminloginComponent}
+      ]}
+    ]),
+    AdmindashboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
