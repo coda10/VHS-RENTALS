@@ -57,6 +57,7 @@ router.post('/registration', async (req, res)=>{
             //     email: registrationData.email,
             //     password: registrationData.password 
             // };
+            
             //Create Admin
             const registerUser = await Admins(registrationData).save();
 
