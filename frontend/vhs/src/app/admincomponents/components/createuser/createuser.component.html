@@ -1,12 +1,13 @@
-<div class="container">
+<div>
+  <div class="container">
     <h1>Create User</h1>
-    <form>
+    <form [formGroup]="userForm" (ngSubmit)="createuser(userForm)">
       <div class="row">
         <div class="col-25">
           <label for="username">Username</label>
         </div>
         <div class="col-75">
-          <input type="text" id="username" name="username" placeholder="Username">
+          <input type="text"  placeholder="Username" formControlName="username">
         </div>
       </div>
       <div class="row">
@@ -14,7 +15,7 @@
           <label for="email">Email</label>
         </div>
         <div class="col-75">
-          <input type="email" id="email" name="email" placeholder="Email">
+          <input type="email" placeholder="Email" formControlName="email">
         </div>
       </div>
       <div class="row">
@@ -22,7 +23,7 @@
           <label for="email">Password</label>
         </div>
         <div class="col-75">
-          <input type="password" id="password" name="password" placeholder="Password">
+          <input type="password" placeholder="Password" formControlName="password">
         </div>
       </div>
       <div class="row">
@@ -30,7 +31,7 @@
           <label for="confirmPassword">Confirm Password</label>
         </div>
         <div class="col-75">
-          <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password">
+          <input type="password" placeholder="Confirm Password" formControlName="confirmPassword">
         </div>
       </div>
       
@@ -40,3 +41,10 @@
       </div>
     </form>
   </div>
+
+  <div class="createuser-message-wrapper">
+    <div *ngIf="passwordMatch === true" class="passwordMatch"><h1>**Password does not match**</h1></div>
+    <div *ngIf="backendFeedback.message" class="message"><h1>{{backendFeedback.message}}</h1></div>
+    <div *ngIf="backendFeedback.error" class="error"><h1>**{{backendFeedback.error}}**</h1></div>
+  </div>
+</div>

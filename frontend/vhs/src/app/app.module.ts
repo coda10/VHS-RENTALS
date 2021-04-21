@@ -24,6 +24,7 @@ import { DeleteuserComponent } from './admincomponents/components/deleteuser/del
 import { ViewmoviesComponent } from './admincomponents/components/viewmovies/viewmovies.component';
 import { DeletemovieComponent } from './admincomponents/components/deletemovie/deletemovie.component';
 import { CreatemovieComponent } from './admincomponents/components/createmovie/createmovie.component';
+import { EditmovieComponent } from './admincomponents/components/editmovie/editmovie.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,7 +62,7 @@ import { CreatemovieComponent } from './admincomponents/components/createmovie/c
         {path: "deleteuser", component: DeleteuserComponent},
         {path: "viewmovies", component: ViewmoviesComponent},
         {path: "createmovie", component: CreatemovieComponent},
-        {path: "editmovie", component: DashboardComponent},
+        {path: "editmovie", component: EditmovieComponent},
         {path: "deletemovie", component: DeletemovieComponent},
         // {path: "logout", component: AdminloginComponent}
       ]}

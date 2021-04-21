@@ -9,6 +9,7 @@ import { ViewmoviesComponent } from './components/viewmovies/viewmovies.componen
 import { CreatemovieComponent } from './components/createmovie/createmovie.component';
 import { EditmovieComponent } from './components/editmovie/editmovie.component';
 import { DeletemovieComponent } from './components/deletemovie/deletemovie.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -25,7 +26,8 @@ import { DeletemovieComponent } from './components/deletemovie/deletemovie.compo
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule
   ]
 })
 export class AdmincomponentsModule { }
