@@ -1,0 +1,5 @@
+{
+    "oncl": {
+        "db_connect": "mongodb+srv://dbuser:Daniel@123@cluster0.y3nok.mongodb.net/vhs?retryWrites=true&w=majority"
+    }
+}

@@ -6,7 +6,7 @@ const logger = require('morgan');
 const mongoose = require('mongoose');
 const cors = require('cors');
 
-//const config = require('config');
+const config = require('config');
 
 const usersRouter = require('./routes/users');
 
@@ -34,7 +34,7 @@ app.use('/admin', dashboard);
 
 //Connect to DB 
 try {
-  mongoose.connect('mongodb://localhost:27017/vhs',{
+  mongoose.connect(config.get('oncl.db_connect'),{
     //mongoose.connect(`mongodb://${config.get('database.db_host')}:${config.get('database.db_port')}/vhs`,{
     useNewUrlParser: true,
       useUnifiedTopology: true,
@@ -50,8 +50,8 @@ try {
   console.log(error);
 }
 
-//console.log(process.env.NODE_ENV);
-//console.log(config.get('database.db_host'));
+console.log(process.env.NODE_ENV);
+console.log(config.get('onprem.db_host'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

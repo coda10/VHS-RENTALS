@@ -66,12 +66,50 @@ router.post('/createuser', async (req, res)=>{
 
 //Edit User
 router.patch('/edituser/:userid', async (req, res)=>{
-    //
+    //Check if Body is not empty
+    if(!req.body) return res.status(404).send({error: "Payload is epmty"});
+
+    //Check if userid is not empty
+    if(!req.params.userid) return res.status(404).send({error: "Id is epmty"});
+
+    //Check if data is not empty
+    if((req.body.username === "" || req.body.email === "") || (req.body.username === null || req.body.email === null)) return res.status(404).send({error: "Id is epmty"});
+    
+    try {
+        const _id = req.params.userid;
+        const data = req.body;
+
+        const updateUser = await Users.findOneAndUpdate({_id}, {$set: {username: data.username, email: data.email}});
+        
+        if(updateUser){
+            res.send({message: "User update successful"});
+        }else{
+            res.send({error: "User update failed"});
+        }
+
+    } catch (error) {
+        res.status(404).send({error: error.message});
+    }
 });
 
 //Delete User
 router.get('/deleteuser/:userid', async (req, res)=>{
+    // console.log(req.params.userid);
+    const _id = req.params.userid;
     //
+    try {
+    //
+        const deleteUser = await Users.findByIdAndDelete({_id});
+        
+        if(deleteUser){
+            res.send({message: "User Deletion Successful!"});
+        }else{
+            res.send({error: "User Deletion Failed!"});
+        }
+        
+    } catch (error) {
+        res.status(404).send({error: error.message});
+    }
 });
 
 //######################################################################################
@@ -85,7 +123,12 @@ router.get('/allmovies', async (req, res)=>{
 
 //Create Movie
 router.post('/createmovie', async (req, res)=>{
+    console.log(req.body.newData);
+    console.log(req.file);
+    console.log(req.newData);
+    console.log(req.body);
     //
+    res.send({message: "Movie Creation Successful!"});
 });
 
 //Edit Movie
